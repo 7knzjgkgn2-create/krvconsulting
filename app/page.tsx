@@ -2,6 +2,9 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import logo from "@/public/krv-logo.png";
 import leaderPhoto from "@/public/benz-vorapat-cutout.webp";
+import teamVorapat from "@/public/team-vorapat.webp";
+import teamNuttinee from "@/public/team-nuttinee.webp";
+import teamPatara from "@/public/team-patara.webp";
 import Waves from "./waves";
 
 /* ข้อมูลติดต่อ — แก้ตรงนี้ที่เดียว (ตอนนี้เป็นข้อมูลตัวอย่าง) */
@@ -25,6 +28,30 @@ const LEADER_ROLES = [
   "Managing Director, BMB Capital",
   "CSO & CFO, Boonrawd Trading",
   "Director, House of Talents",
+];
+
+const TEAM = [
+  {
+    name: "คุณเบนซ์ วรภัทร (Vorapat)",
+    role: "ผู้นำทีม",
+    photo: teamVorapat,
+    bio: "CEO, Singha Ventures Capital · MD, BMB Capital · CSO & CFO, Boonrawd Trading · Director, House of Talents",
+    focus: ["Strategy", "Investment", "Corporate Finance"],
+  },
+  {
+    name: "Nuttinee Chavananikul",
+    role: "ทีมที่ปรึกษา",
+    photo: teamNuttinee,
+    bio: "ผู้บริหารธุรกิจ อดีต Chief Executive Officer (CEO) ของ 88 (Thailand) Public Company Limited",
+    focus: ["Leadership", "Business Management"],
+  },
+  {
+    name: "Patara Kittivanich",
+    role: "ทีมที่ปรึกษา",
+    photo: teamPatara,
+    bio: "Senior Manager, New Business Development, Boonrawd Trading · นักวางกลยุทธ์ธุรกิจประจำกรุงเทพฯ",
+    focus: ["Post-Merger Integration", "PMO", "New Business Development"],
+  },
 ];
 
 const PAINS = [
@@ -216,6 +243,7 @@ export default function Home() {
           </a>
           <nav className="hidden items-center gap-7 text-sm text-muted md:flex" aria-label="เมนูหลัก">
             <a href="#why" className="hover:text-violet-600">จุดเด่น</a>
+            <a href="#team" className="hover:text-violet-600">ทีมงาน</a>
             <a href="#services" className="hover:text-violet-600">บริการ</a>
             <a href="#faq" className="hover:text-violet-600">คำถามที่พบบ่อย</a>
             <a href="#contact" className="hover:text-violet-600">ติดต่อเรา</a>
@@ -342,6 +370,47 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* ทีมงาน */}
+        <section id="team" className="mx-auto max-w-6xl px-5 pt-20 sm:pt-24">
+          <SectionHead
+            eyebrow="ทีมงานของเรา"
+            title="ผู้บริหารตัวจริง จากองค์กรชั้นนำ"
+            intro="ทีมที่ปรึกษาที่ผ่านการบริหาร ลงทุน และสร้างธุรกิจใหม่มาแล้วจริง พร้อมเป็นคู่คิดระยะยาวให้ธุรกิจของคุณ"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {TEAM.map((m) => (
+              <article key={m.name} className="group overflow-hidden rounded-xl border border-line bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-600/10">
+                <div className="relative aspect-[4/5] overflow-hidden bg-violet-50">
+                  <Image
+                    src={m.photo}
+                    alt={m.name}
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-indigo-950/70 to-transparent" aria-hidden="true" />
+                  <span className="absolute bottom-4 left-5 inline-flex items-center gap-2 rounded-full bg-card/95 px-3 py-1 text-xs font-semibold text-violet-600">
+                    <GoldDot className="h-1.5 w-1.5" />
+                    {m.role}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-h3 font-semibold text-indigo-800">{m.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{m.bio}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {m.focus.map((f) => (
+                      <li key={f} className="rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-indigo-800">
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
