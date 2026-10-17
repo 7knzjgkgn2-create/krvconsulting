@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
+import leaderPhoto from "@/public/benz-vorapat.webp";
 
 /* ข้อมูลติดต่อ — แก้ตรงนี้ที่เดียว (ตอนนี้เป็นข้อมูลตัวอย่าง) */
 const CONTACT = {
@@ -231,10 +233,24 @@ export default function Home() {
             </div>
 
             {/* การ์ดผู้นำทีม */}
-            <aside className="rounded-lg border border-gold-500/40 bg-plum-950/60 p-7 backdrop-blur sm:p-8">
-              <p className="text-eyebrow font-semibold uppercase text-gold-300">นำทีมโดย</p>
-              <p className="mt-3 font-serif text-h3 font-semibold">คุณเบนซ์ Vorapat</p>
-              <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
+            <aside className="overflow-hidden rounded-lg border border-gold-500/40 bg-plum-950">
+              <div className="relative aspect-square sm:aspect-[4/5] lg:aspect-[5/6]">
+                <Image
+                  src={leaderPhoto}
+                  alt="คุณเบนซ์ Vorapat ผู้นำทีม ก้าวแรก เวนเจอร์ส"
+                  fill
+                  priority
+                  placeholder="blur"
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-plum-950 via-plum-950/70 to-transparent" aria-hidden="true" />
+                <div className="absolute inset-x-0 bottom-0 p-7 sm:px-8">
+                  <p className="text-eyebrow font-semibold uppercase text-gold-300">นำทีมโดย</p>
+                  <p className="mt-2 font-serif text-h3 font-semibold">คุณเบนซ์ Vorapat</p>
+                </div>
+              </div>
+              <ul className="space-y-3 border-t border-gold-500/30 px-7 py-6 sm:px-8">
                 {LEADER_ROLES.map((role) => (
                   <li key={role} className="flex gap-3 text-sm text-white/85">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-400" aria-hidden="true" />
