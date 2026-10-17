@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Kaow Raek Ventures — Strategy & Finance Advisory for Thai SMEs";
+export const alt = "Kaoraek Ventures — Strategy, Financial & Growth for Thai SMEs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,7 +16,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "linear-gradient(135deg, #1a0f2e 0%, #2a1748 60%, #4f2d84 100%)",
+          background: "linear-gradient(120deg, #2b126d 0%, #5b2bc8 55%, #9a55e6 100%)",
           color: "white",
         }}
       >
@@ -28,27 +28,27 @@ export default function OpengraphImage() {
               justifyContent: "center",
               width: 96,
               height: 96,
-              border: "3px solid #c9a24d",
-              color: "#d9b86a",
+              border: "3px solid #f2b632",
+              color: "#ffffff",
               fontSize: 34,
               fontWeight: 700,
             }}
           >
             KRV
           </div>
-          <div style={{ display: "flex", fontSize: 26, letterSpacing: 6, color: "#e8d3a0" }}>
-            STRATEGY · FINANCE · INVESTMENT
+          <div style={{ display: "flex", fontSize: 26, letterSpacing: 6, color: "#f7c84f" }}>
+            STRATEGY · FINANCIAL · GROWTH
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 76, fontWeight: 700, lineHeight: 1.1 }}>
-            Kaow Raek Ventures
+            Kaoraek Ventures
           </div>
           <div style={{ display: "flex", marginTop: 20, fontSize: 36, color: "rgba(255,255,255,0.8)" }}>
-            Business Strategy &amp; Finance Advisory for Thai SMEs
+            Helping Thai businesses take the first step to systematic growth
           </div>
         </div>
-        <div style={{ display: "flex", height: 6, width: 160, background: "#c9a24d" }} />
+        <div style={{ display: "flex", height: 6, width: 160, background: "#f2b632" }} />
       </div>
     ),
     { ...size },

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans_Thai, Noto_Serif_Thai } from "next/font/google";
+import { IBM_Plex_Sans_Thai, Prompt } from "next/font/google";
 import "./globals.css";
 
 const plexThai = IBM_Plex_Sans_Thai({
@@ -9,16 +9,16 @@ const plexThai = IBM_Plex_Sans_Thai({
   display: "swap",
 });
 
-const serifThai = Noto_Serif_Thai({
-  variable: "--font-serif-thai",
+const prompt = Prompt({
+  variable: "--font-prompt",
   subsets: ["thai", "latin"],
   weight: ["500", "600", "700"],
   display: "swap",
 });
 
-const title = "ก้าวแรก เวนเจอร์ส | ที่ปรึกษากลยุทธ์และการเงินสำหรับ SME ไทย";
+const title = "ก้าวแรก เวนเจอร์ส (Kaoraek Ventures) | ที่ปรึกษา Strategy, Financial & Growth สำหรับ SME ไทย";
 const description =
-  "บริษัท ก้าวแรก เวนเจอร์ส จำกัด ที่ปรึกษาธุรกิจและวิทยากรด้าน Business Strategy & Finance สำหรับ SME ไทย นำทีมโดยคุณเบนซ์ Vorapat — ลงมือทำจริง ไม่ใช่แค่ให้คำแนะนำ";
+  "Kaoraek Ventures (KRV) ที่ปรึกษาและผู้สร้างองค์ความรู้ด้าน Strategy, Financial & Growth ช่วยธุรกิจไทยเดิน “ก้าวแรก” สู่การเติบโตอย่างมีระบบ นำทีมโดยคุณเบนซ์ วรภัทร";
 
 export const metadata: Metadata = {
   title,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    siteName: "ก้าวแรก เวนเจอร์ส (KRV Consulting)",
+    siteName: "ก้าวแรก เวนเจอร์ส (Kaoraek Ventures)",
     locale: "th_TH",
     type: "website",
   },
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2a1748",
+  themeColor: "#fbf9f6",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="th"
-      className={`${plexThai.variable} ${serifThai.variable} h-full antialiased`}
+      className={`${plexThai.variable} ${prompt.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

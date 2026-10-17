@@ -42,3 +42,10 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# private business documents (do not publish)
+*.pptx
+*.ppt
+*.pdf
+*.docx
+*.xlsx
