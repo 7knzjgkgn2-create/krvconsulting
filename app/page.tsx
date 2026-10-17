@@ -380,16 +380,16 @@ export default function Home() {
             title="ผู้บริหารตัวจริง จากองค์กรชั้นนำ"
             intro="ทีมที่ปรึกษาที่ผ่านการบริหาร ลงทุน และสร้างธุรกิจใหม่มาแล้วจริง พร้อมเป็นคู่คิดระยะยาวให้ธุรกิจของคุณ"
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {TEAM.map((m) => (
-              <article key={m.name} className="group overflow-hidden rounded-xl border border-line bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-600/10">
+          <div className="mt-12 grid gap-6 sm:grid-cols-3 sm:gap-5 lg:gap-6">
+            {TEAM.map((m, i) => (
+              <article key={m.name} className={`group overflow-hidden rounded-xl border bg-card shadow-sm ${i === 0 ? "border-violet-400 ring-1 ring-violet-400/40 sm:order-2" : `border-line ${i === 1 ? "sm:order-1" : "sm:order-3"}`} transition hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-600/10`}>
                 <div className="relative aspect-[4/5] overflow-hidden bg-violet-50">
                   <Image
                     src={m.photo}
                     alt={m.name}
                     fill
                     placeholder="blur"
-                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 33vw, 100vw"
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-indigo-950/70 to-transparent" aria-hidden="true" />
