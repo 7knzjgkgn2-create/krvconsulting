@@ -1,0 +1,6 @@
+*.pptx
+*.ppt
+*.pdf
+*.docx
+*.xlsx
+.env*
